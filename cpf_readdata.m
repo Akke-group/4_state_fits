@@ -1,7 +1,7 @@
 function [R2, R2sig, nucp, resname, carrier_freq, usef, nodatpts] =...
     cpf_readdata(filename)
 
-% Used as callback in CPMGfit. Reads the specified data file.
+
 %
 % R2 is a cell array with a matrix for each carrier_freq. The matrix has
 %   one row per residue and one column per nucp, so that the size is 
@@ -16,9 +16,7 @@ function [R2, R2sig, nucp, resname, carrier_freq, usef, nodatpts] =...
 %   R2 values that should be fit. Replace R2 value by -1 to exclude from
 %   fit.
 %
-% From CPMGfit 2.0, this reads only CPMGfit input (.cfi) files.
-% A starting point for creating such files can be the conversion of an old
-% input file using the tool cpf_convertinputfile.
+
 
 fid = fopen(filename,'rt');
 n = 0;
@@ -76,7 +74,4 @@ while 1
         end
     end
 end
-%R2 = R2';
-%R2sig = R2sig';
-%nucp = nucp';
 fclose(fid);
